@@ -1,5 +1,9 @@
 # Antlr4 Commands
 
+```bash
+antlr4 -o ./ProposCalc -visitor -listener -Xexact-output-dir ./grammars/PC.g4 
+```
+
 ## Basic Command Structure
 
 ```bash

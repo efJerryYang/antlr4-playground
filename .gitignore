@@ -298,3 +298,6 @@ fabric.properties
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+## ANTLR ##
+.antlr/
