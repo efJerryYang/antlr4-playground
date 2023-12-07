@@ -2,35 +2,10 @@ package org.sparkagi.simplearith;
 
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
-import org.sparkagi.simplearith.generated.SimpleArithBaseListener;
 import org.sparkagi.simplearith.generated.SimpleArithLexer;
 import org.sparkagi.simplearith.generated.SimpleArithParser;
-
-/**
- * MyListener
- */
-class MyListener extends SimpleArithBaseListener {
-
-    @Override
-    public void enterExpr(SimpleArithParser.ExprContext ctx) {
-        System.out.println("Entering expr: " + ctx.getText());
-        for (ParseTree child : ctx.children) {
-            if (child instanceof TerminalNode) {
-                // This is a terminal node like a number or operator
-                System.out.println("Terminal node: " + child.getText());
-            } else {
-                // This is a non-terminal node
-                System.out.println("Non-terminal node: " + child.getText());
-            }
-        }
-    }
-
-    @Override
-    public void exitExpr(SimpleArithParser.ExprContext ctx) {
-        System.out.println("Exiting expr: " + ctx.getText());
-    }
-
-}
+import org.sparkagi.simplearith.parsing.MyListener;
+import org.sparkagi.simplearith.parsing.MyVisitor;
 
 public class App {
     public static void main(String[] args) {
@@ -52,7 +27,15 @@ public class App {
         MyListener listener = new MyListener();
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(listener, tree);
+        System.out.println(tree.toStringTree(parser));
 
+        System.out.println("========================================");
+        MyVisitor visitor = new MyVisitor();
+        visitor.visit(tree);
+        // System.out.println(s);
+        System.out.println(tree.toStringTree(parser));
+
+        System.out.println("========================================");
         // Print the parse tree (for debugging)
         System.out.println(tree.toStringTree(parser));
     }
