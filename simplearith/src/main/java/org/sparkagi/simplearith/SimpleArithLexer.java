@@ -1,6 +1,5 @@
 package org.sparkagi.simplearith;
-
-// Generated from grammars/SimpleArith.g4 by ANTLR 4.13.1
+// Generated from ./src/main/antlr/SimpleArith.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
