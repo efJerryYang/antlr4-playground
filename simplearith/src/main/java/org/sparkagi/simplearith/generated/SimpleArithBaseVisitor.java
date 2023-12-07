@@ -1,4 +1,4 @@
-package org.sparkagi.simplearith;
+package org.sparkagi.simplearith.generated;
 
 // Generated from ./src/main/antlr/SimpleArith.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
